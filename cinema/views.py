@@ -1,6 +1,7 @@
 from datetime import datetime
-from django.db.models import F, Count
-from rest_framework import viewsets, mixins
+from rest_framework.permissions import IsAuthenticated
+from django.db.models import Count, F
+from rest_framework import mixins, viewsets
 from rest_framework.pagination import PageNumberPagination
 
 from cinema.models import (
@@ -145,9 +146,6 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
 class OrderPagination(PageNumberPagination):
     page_size = 10
     max_page_size = 100
-
-
-from rest_framework.permissions import IsAuthenticated
 
 
 class OrderViewSet(
