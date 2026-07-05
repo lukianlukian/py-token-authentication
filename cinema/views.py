@@ -1,8 +1,9 @@
 from datetime import datetime
-from rest_framework.permissions import IsAuthenticated
+
 from django.db.models import Count, F
 from rest_framework import mixins, viewsets
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
 
 from cinema.models import (
     Genre,
